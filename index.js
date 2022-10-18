@@ -7,5 +7,9 @@ app.get('/', function(req, res) {
   res.json({ mensaje: '¡Hola Mundo!' })   
 })
 
+const sumar = (a,b) => a+b; 
+
+module.exports = sumar; 
+
 app.listen(port)
 console.log('API escuchando en el puerto ' + port)
