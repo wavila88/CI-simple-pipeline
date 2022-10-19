@@ -11,13 +11,13 @@ pipeline {
     stages {
         stage('Install dependencies') { 
             steps {
-                echo 'Hello node'
-                sh 'npm i'
+                cmd_exec('echo "Buils starting..."')
+                  cmd_exec('npm i')
             }
         }
         stage('Run test') { 
             steps {
-                sh 'npm test'
+                  cmd_exec('npm test')
             }
         }
     }
