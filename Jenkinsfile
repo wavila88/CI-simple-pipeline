@@ -1,18 +1,23 @@
 pipeline {
     agent any 
     tools {
-      nodejs 'node-18.5.0'
+       nodejs 'node-18.5.0'
     }
 
     options{
       timeout(time: 2, unit: 'MINUTES')
     }
 
- stages {
-        stage('example') {
+    stages {
+        stage('Install dependencies') { 
             steps {
-                sh 'node --version'
-                sh 'npm --version'
+               
+                sh 'npm i'
+            }
+        }
+        stage('Run test') { 
+            steps {
+                sh 'npm test'
             }
         }
     }
