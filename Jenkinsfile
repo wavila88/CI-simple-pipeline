@@ -12,12 +12,12 @@ pipeline {
         stage('Install dependencies') { 
             steps {
                
-                sh 'npm i'
+                bat 'npm i'
             }
         }
         stage('Run test') { 
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
     }
